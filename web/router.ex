@@ -41,6 +41,7 @@ defmodule HelloPhoenix.Router do
 
     get "/", PageController, :index
     get "/hello", HelloController, :index
+    get "/hello/:messenger", HelloController, :show
     #get "/", RootController, :index #example of ambiguous route
 
     #creates all RESTful routes
