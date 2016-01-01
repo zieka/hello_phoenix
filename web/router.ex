@@ -19,7 +19,7 @@ defmodule HelloPhoenix.Router do
   use HelloPhoenix.Web, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "text"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -62,6 +62,10 @@ defmodule HelloPhoenix.Router do
 
     #   resources "reviews", ReviewController
     # end
+  end
+
+  scope "/", HelloPhoenix do
+    get "/redirect_test", PageController, :redirect_test, as: :redirect_test
   end
 
   #perfectly fine to have two scopes defined for the same path
