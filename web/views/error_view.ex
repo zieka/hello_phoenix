@@ -2,11 +2,16 @@ defmodule HelloPhoenix.ErrorView do
   use HelloPhoenix.Web, :view
 
   def render("404.html", _assigns) do
-    "Page not found"
+  # render just text:
+    #"Page not found"
+
+  #render custrom template:
+    render("not_found.html", %{})
   end
 
   def render("500.html", _assigns) do
-    "Server internal error"
+    #"Server internal error"
+    render("something_wrong.html", %{})
   end
 
   # In case no render clause matches or no
